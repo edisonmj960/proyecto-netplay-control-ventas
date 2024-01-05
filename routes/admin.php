@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\facturaController;
 use App\Http\Controllers\cargoController;
 use App\Http\Controllers\categoriaController;
 use App\Http\Controllers\clienteController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\departamentoController;
 use App\Http\Controllers\empleadoController;
 use App\Http\Controllers\principalController;
 use App\Http\Controllers\productoController;
+use App\Http\Controllers\ventaController;
 use App\Models\producto;
 use Illuminate\Support\Facades\Route;
 
@@ -67,5 +69,14 @@ Route::prefix('/admin/categoria')->group(function () {
     Route::post('/update/{id}', [categoriaController::class, 'update']);
     Route::get('/delete/{id}', [categoriaController::class, 'destroy']);
 });
-
+Route::prefix('admin/venta')->group(function () {
+    Route::get('', [ventaController::class, 'index']);
+    Route::post('/insert', [ventaController::class, 'store']);
+    Route::get('/insert/{id}', [ventaController::class, 'show']);
+    Route::post('/update/detalle', [ventaController::class, 'update']);
+});
+Route::prefix('admin/factura')->group(function () {
+    Route::get('', [facturaController::class, 'index']);
+    Route::get('/show/{id}/generateInvoice', [facturaController::class, 'show'])->name('factura.invoice');
+});
 

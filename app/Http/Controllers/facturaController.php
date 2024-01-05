@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\factura;
 use App\Models\cliente;
-use App\Models\detallefactura;
+use App\Models\detalleFactura;
 use App\Models\empleado;
 use App\Models\producto;
 use Illuminate\Http\Request;
@@ -19,14 +19,14 @@ class facturaController extends Controller
         $facturas = factura::all();
         $clientes = cliente::all();
         $empleado = empleado::all();
-        $detalle = detallefactura::all();
+        $detalle = detalleFactura::all();
         $facturas = $facturas->map(function ($facturas) use ($clientes, $empleado) {
             //$facturas->estado_factura = $facturas->estado_factura ? 'Pagada' : 'Pendiente';
             $facturas->cliente_id = $clientes->find($facturas->cliente_id)->nombres . ' ' . $clientes->find($facturas->cliente_id)->apellidos;
             $facturas->cod_empleado = $empleado->find($facturas->cod_empleado)->nombres . ' ' . $empleado->find($facturas->cod_empleado)->apellidos;
 
             // Verificar si hay detalles para la factura
-            $detallesCount = Detallefactura::where('num_factura', $facturas->id)->count();
+            $detallesCount = DetalleFactura::where('num_factura', $facturas->id)->count();
 
             // Agregar propiedad anulado según la cantidad de detalles
             $facturas->estado_factura = $detallesCount == 0 ? 'Anulada' : 'Pagada';
@@ -41,7 +41,7 @@ class facturaController extends Controller
         $clientes = cliente::all();
         $empleado = empleado::all();
         $productos = producto::all();
-        $detalle = detallefactura::where('num_factura', $factura->id)->get();
+        $detalle = detalleFactura::where('num_factura', $factura->id)->get();
 
         $customer = new Buyer([
             'name'          => $clientes->find($factura->cliente_id)->nombres . ' ' . $clientes->find($factura->cliente_id)->apellidos,
