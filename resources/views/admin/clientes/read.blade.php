@@ -16,7 +16,8 @@
             <p>direccion:{{$cliente->direccion}}</p>
             <p>telefono:{{$cliente->telefono}}</p>
             <p>email:{{$cliente->email}}</p>
-            <p>id_distrito: {{$distrito->find($cliente->id_distrito)->nombre_distrito}}</p>
+            <p>id_departamento: {{$departamento->find($cliente->id_departamento)->nombre_departamento}}</p>
+
 
             <a href="{{ url('admin/cliente') }}" class="btn btn-danger">Volver <i class="fa fa-arrow-left"></i></a>
         </div>

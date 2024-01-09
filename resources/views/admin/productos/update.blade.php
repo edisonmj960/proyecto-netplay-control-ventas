@@ -26,7 +26,7 @@
                 </x-adminlte-select2>
 
                 <x-adminlte-button class="btn-flat" type="submit" label="Guardar" theme="primary"/>
-                <x-adminlte-button class="btn-flat" href="{{ url('admin/distrito') }}" label="Cancelar" theme="danger" />
+                <x-adminlte-button class="btn-flat" href="{{ url('admin/departamento') }}" label="Cancelar" theme="danger" />
             </form>
         </div>
     </div>

@@ -13,7 +13,7 @@
         <div class="card-body">
             <p>nombres: {{$empleado->nombres}}</p>
             <p>apellidos: {{$empleado->apellidos}}</p>
-            <p>dni_empleado: {{$empleado->dni_empleado}}</p>
+            <p>cc_empleado: {{$empleado->cc_empleado}}</p>
             <p>direccion: {{$empleado->direccion}}</p>
             <p>estado_civil: {{$empleado->estado_civil}}</p>
             <p>nivel_educacion: {{$empleado->nivel_educacion}}</p>
@@ -21,7 +21,7 @@
             <p>email: {{$empleado->email}}</p>
             <p>sueldo_basico: {{$empleado->sueldo_basico}}</p>
             <p>fecha_ingreso: {{$empleado->fecha_ingreso}}</p>
-            <p>id_distrito: {{$distrito->find($empleado->id_distrito)->nombre_distrito}}</p>
+            <p>id_departamento: {{$departamento->find($empleado->id_departamento)->nombre_departamento}}</p>
             <p>cod_cargo: {{$cargo->find($empleado->cod_cargo)->nombre_cargo}}</p>
 
             <a href="{{ url('admin/empleado') }}" class="btn btn-danger">Volver <i class="fa fa-arrow-left"></i></a>

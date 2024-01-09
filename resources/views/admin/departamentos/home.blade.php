@@ -1,11 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'Distritos')
+
+@section('title', 'Departamentos')
 
 @section('content_header')
     <div class="d-flex justify-content-between">
-        <h1>Distritos</h1>
-        <a class="btn btn-primary" href="distrito/create">Crear Cargo</a>
+        <h1>Departamentos</h1>
+        <a class="btn btn-primary" href="departamento/create">Crear Cargo</a>
     </div>
     @if (session('success'))
         <div class="alert alert-success mt-4" id="alert">
@@ -20,18 +21,21 @@
 
 @section('content')
     @php
-        $heads = ['ID', 'Nombre del distrito', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
 
-        $data = $distritos->toArray();
+        $heads = ['ID', 'Nombre del departamento', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
+
+        $data = $departamentos->toArray();
         $data = array_map(function ($row) {
             $row[3] =
                 '<nobr>' .
-                '<a class="btn btn-xs btn-default text-primary mx-1 shadow" href="distrito/edit/' .
+                '<a class="btn btn-xs btn-default text-primary mx-1 shadow" href="departamento/edit/' .
                 json_encode($row['id']) .
                 '" title="Edit">
             <i class="fa fa-lg fa-fw fa-pen"></i>
         </a>' .
-                '<a class="btn btn-xs btn-default text-teal mx-1 shadow" href="distrito/read/' .
+
+                '<a class="btn btn-xs btn-default text-teal mx-1 shadow" href="departamento/read/' .
+
                 json_encode($row['id']) .
                 '" title="Details">
                <i class="fa fa-lg fa-fw fa-eye"></i>

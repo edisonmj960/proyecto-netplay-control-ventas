@@ -17,7 +17,9 @@
 
                 <x-adminlte-input name="apellidos" label="Apellidos" type="text" placeholder="Apellido del empleado" />
 
-                <x-adminlte-input name="dni_empleado" label="DNI" type="text" placeholder="DNI del empleado" />
+
+                <x-adminlte-input name="cc_empleado" label="CC" type="text" placeholder="CC del empleado" />
+
 
                 <x-adminlte-input name="direccion" label="Direccion" type="text" placeholder="Direccion del empleado" />
 
@@ -54,11 +56,11 @@
                 <x-adminlte-input-date name="fecha_ingreso" :config="$config" placeholder="Choose a date..."
                     label="Datetime" />
 
-                <x-adminlte-select2 name="id_distrito" label="Distrito" igroup-size="lg"
+                <x-adminlte-select2 name="id_departamento" label="Departamento" igroup-size="lg"
                     data-placeholder="Select an option...">
                     <option />
-                    @foreach ($distrito as $distritos)
-                        <option value="{{ $distritos->id }}">{{ $distritos->nombre_distrito }}</option>
+                    @foreach ($departamento as $departamentos)
+                        <option value="{{ $departamentos->id }}">{{ $departamentos->nombre_departamento }}</option>
                     @endforeach
                 </x-adminlte-select2>
                 <x-adminlte-select2 name="cod_cargo" label="Cargo" igroup-size="lg"

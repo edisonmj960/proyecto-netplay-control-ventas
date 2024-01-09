@@ -18,11 +18,12 @@
                 <x-adminlte-input name="direccion" value="{{$cliente->direccion}}" label="Direccion" type="text" placeholder="Direccion"/>
                 <x-adminlte-input name="telefono" value="{{$cliente->telefono}}" label="Telefono" type="text" placeholder="Telefono"/>
                 <x-adminlte-input name="email" value="{{$cliente->email}}" label="Email" type="text" placeholder="Email"/>
-                <x-adminlte-select2 name="id_distrito" label="Distrito" igroup-size="lg"
+                <x-adminlte-select2 name="id_departamento" label="Departamento" igroup-size="lg"
                     data-placeholder="Select an option...">
                     <option />
-                    @foreach ($distrito as $distritos)
-                        <option value="{{ $distritos->id }}" @if($distritos->id == $cliente->id_distrito) selected @endif>{{ $distritos->nombre_distrito }}</option>
+                    @foreach ($departamento as $departamentos)
+                        <option value="{{ $departamentos->id }}" @if($departamentos->id == $cliente->id_departamento) selected @endif>{{ $departamentos->nombre_departamento }}</option>
+
                     @endforeach
                 </x-adminlte-select2>
                 <x-adminlte-button class="btn-flat" type="submit" label="Guardar" theme="primary"/>

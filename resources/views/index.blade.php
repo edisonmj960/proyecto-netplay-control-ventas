@@ -36,7 +36,7 @@
         <div class="col-lg-3 col-6">
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $boletas->count() }}</h3>
+                    <h3>{{ $facturas->count() }}</h3>
                     <span>Ventas</span>
                 </div>
                 <div class="icon">
@@ -74,8 +74,8 @@
         <div class="col-lg-4 col-6">
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $distrito->count() }}</h3>
-                    <span>Distritos</span>
+                    <h3>{{ $departamento->count() }}</h3>
+                    <span>Departamentos</span>
                 </div>
                 <div class="icon">
                     <i class="fas fa-map"></i>
@@ -118,17 +118,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             var ctx = document.getElementById('myChart').getContext('2d');
 
-            var boletasPorEmpleado = @json($boletasPorEmpleado);
+            var facturasPorEmpleado = @json($facturasPorEmpleado);
 
-            var labels = Object.keys(boletasPorEmpleado);
-            var data = Object.values(boletasPorEmpleado);
+            var labels = Object.keys(facturasPorEmpleado);
+            var data = Object.values(facturasPorEmpleado);
 
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Número de Boletas por Empleado',
+                        label: 'Número de facturas por Empleado',
                         data: data,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
@@ -145,14 +145,12 @@
             });
         });
     </script> --}}
-    @if ($boletas->count() != 0)
+    @if ($facturas->count() != 0)
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var ctx = document.getElementById('myChart').getContext('2d');
-
-            var boletasPorEmpleado = @json($boletasPorEmpleado);
-
-            var labels = Object.keys(boletasPorEmpleado);
+            var facturasPorEmpleado = @json($facturasPorEmpleado);
+            var labels = Object.keys(facturasPorEmpleado);
             let empleados = @json($empleados);
             let empleadosMap = {};
             empleados.forEach(empleado => {
@@ -163,14 +161,13 @@
             });
 
             labels = labels.map(id => empleadosMap[id].nombres + ' ' + empleadosMap[id].apellidos);
-            var data = Object.values(boletasPorEmpleado);
-
+            var data = Object.values(facturasPorEmpleado);
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Número de Boletas por Empleado',
+                        label: 'Número de facturas por Empleado',
                         data: data,
                         backgroundColor:[
                             "rgba(255, 99, 132, 0.2)",

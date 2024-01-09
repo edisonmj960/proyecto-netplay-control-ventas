@@ -17,7 +17,9 @@
 
                 <x-adminlte-input name="apellidos" value="{{ $empleados->apellidos }}" label="Apellidos" type="text" placeholder="Apellido del empleado" />
 
-                <x-adminlte-input name="dni_empleado" value="{{ $empleados->dni_empleado }}" label="DNI" type="text" placeholder="DNI del empleado" />
+
+                <x-adminlte-input name="cc_empleado" value="{{ $empleados->cc_empleado }}" label="CC" type="text" placeholder="CC del empleado" />
+
 
                 <x-adminlte-input name="direccion" value="{{ $empleados->direccion }}" label="Direccion" type="text" placeholder="Direccion del empleado" />
                 <x-adminlte-input name="estado_civil" value="{{ $empleados->estado_civil }}" label="Estado Civil" type="text"
@@ -36,12 +38,13 @@
                 <x-adminlte-input-date name="fecha_ingreso" value="{{ $empleados->fecha_ingreso }}" :config="$config" placeholder="Choose a date..."
                     label="Datetime" />
 
-                    {{-- agregar distrito por default de la base de datos --}}
-                <x-adminlte-select2 name="id_distrito" label="Distrito" igroup-size="lg"
+
+                    {{-- agregar departamento por default de la base de datos --}}
+                <x-adminlte-select2 name="id_departamento" label="Departamento" igroup-size="lg"
                     data-placeholder="Select an option...">
                     <option />
-                    @foreach ($distrito as $distritos)
-                        <option value="{{ $distritos->id }}"  @if($distritos->id == $empleados->id_distrito) selected @endif>{{ $distritos->nombre_distrito }}</option>
+                    @foreach ($departamento as $departamentos)
+                        <option value="{{ $departamentos->id }}"  @if($departamentos->id == $empleados->id_departamento) selected @endif>{{ $departamentos->nombre_departamento }}</option>
                     @endforeach
                 </x-adminlte-select2>
                 <x-adminlte-select2 name="cod_cargo" label="Cargo" igroup-size="lg"

@@ -20,7 +20,7 @@
 
 @section('content')
     @php
-        $heads = ['ID', 'Nombre', 'Apellidos', 'Dirección', 'Teléfono', 'Email', 'Distrito', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
+        $heads = ['ID', 'Nombre', 'Apellidos', 'Dirección', 'Teléfono', 'Email', 'Departamento', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
 
         $data = $cliente->toArray();
         $data = array_map(function ($row) {

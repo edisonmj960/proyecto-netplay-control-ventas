@@ -35,7 +35,7 @@ class empleadoController extends Controller
         $empleado = new empleado();
         $empleado->nombres = $request->input('nombres');
         $empleado->apellidos = $request->input('apellidos');
-        $empleado->dni_empleado = $request->input('dni_empleado');
+        $empleado->cc_empleado = $request->input('cc_empleado');
         $empleado->direccion = $request->input('direccion');
         $empleado->estado_civil = $request->input('estado_civil');
         $empleado->nivel_educacion = $request->input('nivel_educacion');
@@ -74,7 +74,7 @@ class empleadoController extends Controller
         $empleados = empleado::find($id);
         $empleados->nombres = $request->input('nombres');
         $empleados->apellidos = $request->input('apellidos');
-        $empleados->dni_empleado = $request->input('dni_empleado');
+        $empleados->cc_empleado = $request->input('cc_empleado');
         $empleados->direccion = $request->input('direccion');
         $empleados->estado_civil = $request->input('estado_civil');
         $empleados->nivel_educacion = $request->input('nivel_educacion');

@@ -1,6 +1,7 @@
 @extends('adminlte::page')
 
-@section('title', 'Departamento | Ver')
+
+@section('title', 'Departamentos | Ver')
 
 @section('content_header')
     <div>
@@ -11,10 +12,11 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <p>ID: {{ $distritos->id }}</p>
-            <p>Nombre del distrito: {{ $distritos->nombre_distrito }}</p>
 
-            <a href="{{ url('admin/distrito') }}" class="btn btn-danger">Volver</a>
+            <p>ID: {{ $departamentos->id }}</p>
+            <p>Nombre del departamento: {{ $departamentos->nombre_departamento }}</p>
+
+            <a href="{{ url('admin/departamento') }}" class="btn btn-danger">Volver</a>
         </div>
     </div>
 @stop
