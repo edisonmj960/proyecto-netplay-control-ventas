@@ -1,5 +1,6 @@
 @extends('adminlte::page')
 
+
 @section('title', 'Departamentos | Ver')
 
 @section('content_header')
@@ -11,6 +12,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+
             <p>ID: {{ $departamentos->id }}</p>
             <p>Nombre del departamento: {{ $departamentos->nombre_departamento }}</p>
 

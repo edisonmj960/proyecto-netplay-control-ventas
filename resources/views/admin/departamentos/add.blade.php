@@ -11,6 +11,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+
             <form action="{{ url('admin/departamento/insert') }}" method="POST">
                 @csrf
                 <x-adminlte-input name="nombre_departamento" label="Nombre del departamento" type="text" placeholder="Nombre del departamento"/>

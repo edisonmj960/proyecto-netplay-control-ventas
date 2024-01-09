@@ -1,7 +1,9 @@
 <x-guest-layout>
+
 <div class="flex justify-center items-center h-screen bg-gray-300">
         <x-authentication-card class="bg-white p-8 rounded-md shadow-md">
             <x-slot name="logo">
+
             <x-authentication-card-logo />
         </x-slot>
 
@@ -9,6 +11,7 @@
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-300">
+
                 {{ session('status') }}
             </div>
         @endif
@@ -29,6 +32,7 @@
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
+
                     <span class="ml-2 text-sm text-gray-600">{{ __('Recuerdame') }}</span>
                 </label>
             </div>
@@ -46,4 +50,5 @@
         </form>
     </x-authentication-card>
     </div>
+
 </x-guest-layout>

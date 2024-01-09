@@ -149,9 +149,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var ctx = document.getElementById('myChart').getContext('2d');
-
             var facturasPorEmpleado = @json($facturasPorEmpleado);
-
             var labels = Object.keys(facturasPorEmpleado);
             let empleados = @json($empleados);
             let empleadosMap = {};
@@ -164,7 +162,6 @@
 
             labels = labels.map(id => empleadosMap[id].nombres + ' ' + empleadosMap[id].apellidos);
             var data = Object.values(facturasPorEmpleado);
-
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {

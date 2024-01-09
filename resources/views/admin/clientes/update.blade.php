@@ -23,6 +23,7 @@
                     <option />
                     @foreach ($departamento as $departamentos)
                         <option value="{{ $departamentos->id }}" @if($departamentos->id == $cliente->id_departamento) selected @endif>{{ $departamentos->nombre_departamento }}</option>
+
                     @endforeach
                 </x-adminlte-select2>
                 <x-adminlte-button class="btn-flat" type="submit" label="Guardar" theme="primary"/>

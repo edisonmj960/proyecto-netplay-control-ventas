@@ -20,7 +20,9 @@
 
 @section('content')
     @php
+
         $heads = ['ID', 'Nombre', 'Apellidos', 'CC', 'Dirección', 'E.Civil', 'Educación', 'Teléfono', 'Email', 'Sueldo', 'F.Ingreso', 'Departamento', 'Cargo', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
+
         $data = $empleados->toArray();
         $data = array_map(function ($row) {
             $row[13] =

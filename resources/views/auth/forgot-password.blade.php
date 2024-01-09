@@ -5,7 +5,9 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
+
             {{ __('¿Olvidaste tu contraseña? Ningún problema. Simplemente háganos saber su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña que le permitirá elegir una nueva.') }}
+
         </div>
 
         @if (session('status'))
@@ -20,13 +22,17 @@
             @csrf
 
             <div class="block">
+
                 <x-label for="email" value="{{ __('Correo electronico') }}" />
+
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
+
                     {{ __('Enlace para restablecer contraseña de correo electrónico') }}
+
                 </x-button>
             </div>
         </form>

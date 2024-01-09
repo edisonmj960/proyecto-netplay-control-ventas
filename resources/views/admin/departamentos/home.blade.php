@@ -1,5 +1,6 @@
 @extends('adminlte::page')
 
+
 @section('title', 'Departamentos')
 
 @section('content_header')
@@ -20,6 +21,7 @@
 
 @section('content')
     @php
+
         $heads = ['ID', 'Nombre del departamento', ['label' => 'Actions', 'no-export' => true, 'width' => 5]];
 
         $data = $departamentos->toArray();
@@ -31,7 +33,9 @@
                 '" title="Edit">
             <i class="fa fa-lg fa-fw fa-pen"></i>
         </a>' .
+
                 '<a class="btn btn-xs btn-default text-teal mx-1 shadow" href="departamento/read/' .
+
                 json_encode($row['id']) .
                 '" title="Details">
                <i class="fa fa-lg fa-fw fa-eye"></i>

@@ -17,7 +17,9 @@
 
                 <x-adminlte-input name="apellidos" label="Apellidos" type="text" placeholder="Apellido del empleado" />
 
+
                 <x-adminlte-input name="cc_empleado" label="CC" type="text" placeholder="CC del empleado" />
+
 
                 <x-adminlte-input name="direccion" label="Direccion" type="text" placeholder="Direccion del empleado" />
 

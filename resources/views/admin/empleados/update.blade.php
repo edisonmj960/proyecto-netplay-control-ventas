@@ -17,7 +17,9 @@
 
                 <x-adminlte-input name="apellidos" value="{{ $empleados->apellidos }}" label="Apellidos" type="text" placeholder="Apellido del empleado" />
 
+
                 <x-adminlte-input name="cc_empleado" value="{{ $empleados->cc_empleado }}" label="CC" type="text" placeholder="CC del empleado" />
+
 
                 <x-adminlte-input name="direccion" value="{{ $empleados->direccion }}" label="Direccion" type="text" placeholder="Direccion del empleado" />
                 <x-adminlte-input name="estado_civil" value="{{ $empleados->estado_civil }}" label="Estado Civil" type="text"
@@ -35,6 +37,7 @@
                 @endphp
                 <x-adminlte-input-date name="fecha_ingreso" value="{{ $empleados->fecha_ingreso }}" :config="$config" placeholder="Choose a date..."
                     label="Datetime" />
+
 
                     {{-- agregar departamento por default de la base de datos --}}
                 <x-adminlte-select2 name="id_departamento" label="Departamento" igroup-size="lg"

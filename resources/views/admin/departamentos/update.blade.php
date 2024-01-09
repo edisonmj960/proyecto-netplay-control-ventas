@@ -1,5 +1,6 @@
 @extends('adminlte::page')
 
+
 @section('title', 'departamentos | Editar')
 
 @section('content_header')
@@ -11,6 +12,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+
             <form action="{{ url('admin/departamento/update/'.$departamentos->id.'') }}" method="POST">
                 @csrf
                 <x-adminlte-input name="nombre_departamento" value="{{ $departamentos->nombre_departamento }}" label="Nombre del departamento" type="text" placeholder="Nombre del departamento"/>
