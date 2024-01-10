@@ -43,6 +43,10 @@ class facturaController extends Controller
         $productos = producto::all();
         $detalle = detalleFactura::where('num_factura', $factura->id)->get();
 
+        if ($detalle->isEmpty()) {
+            return redirect()->back()->with('error', 'No hay artículos definidos para facturar.');
+        }
+
         $customer = new Buyer([
             'name'          => $clientes->find($factura->cliente_id)->nombres . ' ' . $clientes->find($factura->cliente_id)->apellidos,
             'custom_fields' => [
