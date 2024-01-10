@@ -3,14 +3,18 @@
 @section('title', 'Cargos')
 
 @section('content_header')
+
     <div class="d-flex justify-content-between">
         <h1>Cargos</h1>
+
         <a class="btn btn-primary" href="cargo/create">Crear Cargo</a>
     </div>
+
     @if (session('success'))
         <div class="alert alert-success mt-4" id="alert">
             {{ session('success') }}
         </div>
+
     @elseif (session('error'))
         <div class="alert alert-danger mt-4" id="alert">
             {{ session('error') }}
@@ -57,6 +61,7 @@
 @stop
 
 @section('css')
+
 @stop
 
 @section('js')
