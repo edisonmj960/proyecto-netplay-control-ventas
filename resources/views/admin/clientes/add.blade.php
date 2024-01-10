@@ -9,6 +9,7 @@
 @stop
 
 @section('content')
+
     <div class="card">
         <div class="card-body">
             <form action="{{ url('admin/cliente/insert') }}" method="POST">
@@ -21,6 +22,7 @@
                 <x-adminlte-select2 name="id_departamento" label="Departamento" igroup-size="lg"
                     data-placeholder="Select an option...">
                     <option />
+
                     @foreach ($departamento as $departamentos)
                         <option value="{{ $departamentos->id }}">{{ $departamentos->nombre_departamento }}</option>
                     @endforeach
@@ -28,7 +30,9 @@
                 <x-adminlte-button class="btn-flat" type="submit" label="Guardar" theme="primary"/>
                 <a href="{{ url('admin/cliente') }}" class="btn btn-flat btn-danger">Cancelar <i class="fas fa-times"></i></a>
             </form>
+
         </div>
+        
     </div>
 @stop
 
