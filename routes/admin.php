@@ -75,6 +75,8 @@ Route::prefix('admin/venta')->group(function () {
     Route::get('/insert/{id}', [ventaController::class, 'show']);
     Route::post('/update/detalle', [ventaController::class, 'update']);
 });
+
+//redirige a la factura
 Route::prefix('admin/factura')->group(function () {
     Route::get('', [facturaController::class, 'index']);
     Route::get('/show/{id}/generateInvoice', [facturaController::class, 'show'])->name('factura.invoice');
