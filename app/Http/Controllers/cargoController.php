@@ -40,11 +40,13 @@ class cargoController extends Controller
         return view('admin.cargos.read', compact('cargo'));
     }
 
+
     public function edit($id)
     {
         $cargo = cargo::find($id);
         return view('admin.cargos.update', compact('cargo'));
     }
+
 
     public function update(Request $request, $id)
     {
@@ -59,6 +61,7 @@ class cargoController extends Controller
             }
         }
     }
+    
 
     public function destroy($id)
     {
