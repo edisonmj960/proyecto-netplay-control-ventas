@@ -7,6 +7,7 @@ use App\Models\empleado;
 use App\Models\departamento;
 use App\Models\cargo;
 
+
 class empleadoController extends Controller
 {
     public function index()
@@ -32,6 +33,7 @@ class empleadoController extends Controller
         return view('admin.empleados.add', compact('departamento', 'cargo'));
     }
 
+    
     public function store(Request $request)
     {
         $empleado = new empleado();
@@ -56,7 +58,7 @@ class empleadoController extends Controller
     }
 
 
-    
+
     public function show($id)
     {
         $departamento = departamento::all();
