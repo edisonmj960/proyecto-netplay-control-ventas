@@ -8,6 +8,7 @@
     </div>
 @stop
 
+
 @section('content')
 
     <div class="card">
@@ -35,6 +36,7 @@
         
     </div>
 @stop
+
 
 @section('css')
 

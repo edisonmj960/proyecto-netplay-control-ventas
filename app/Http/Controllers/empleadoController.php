@@ -23,6 +23,8 @@ class empleadoController extends Controller
         return view('admin.empleados.home', compact('empleados', 'departamento', 'cargo'));
     }
 
+
+
     public function create()
     {
         $departamento = departamento::all();
@@ -53,6 +55,8 @@ class empleadoController extends Controller
         }
     }
 
+
+    
     public function show($id)
     {
         $departamento = departamento::all();
